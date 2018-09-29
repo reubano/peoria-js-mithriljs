@@ -1,0 +1,40 @@
+{
+  "author": "Reuben Cummings",
+  "license": "MIT",
+  "name": "peoria-js-mithriljs",
+  "description": "Component based development using Mithriljs",
+  "version": "0.5.0",
+  "environment": "web",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reubano/peoria-js-mithriljs"
+  },
+  "engines": {
+    "node": "8.11.3",
+    "npm": "6.4.x"
+  },
+  "scripts": {
+    "prettify": "prettier --write 'app/**/*.js'",
+    "watch:prettify": "onchange 'app/**/*.js' -- prettier --write {{changed}}",
+    "watch": "npm run watch:prettify",
+    "lint": "eslint app/**/*.js",
+    "start": "brunch watch --server",
+    "build": "brunch build || echo 'error building project'",
+    "postinstall": "brunch build"
+  },
+  "dependencies": {
+    "auto-reload-brunch": "^2.0.0",
+    "babel-brunch": "^6.1.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "brunch": "git+https://github.com/nerevu/brunch.git",
+    "eslint-brunch": "^3.12.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.11.1",
+    "prettier": "^1.14.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  }
+}
