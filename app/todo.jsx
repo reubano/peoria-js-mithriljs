@@ -16,10 +16,15 @@ function Todos(props) {
 
 function Todo(props) {
   return (
-    <div>
-      <button onClick={() => props.deleteTodo(props.val)}>Done</button>
-      {props.val}
-    </div>
+    <li className="">
+      <div className="view">
+        <button
+          className="destroy"
+          onClick={() => props.deleteTodo(props.val)}>
+        </button>
+        <label>{props.val}</label>
+      </div>
+    </li>
   );
 }
 
@@ -32,6 +37,12 @@ export default class Application extends React.Component {
       value: "",
       filterValue: ""
     };
+  }
+
+  _addTodo(e) {
+    if (e.key === 'Enter') {
+      this.addTodo()
+    }
   }
 
   addTodo() {
@@ -64,21 +75,26 @@ export default class Application extends React.Component {
 
     return (
       <div>
-        Filter
-        <input
-          type="input"
-          value={this.state.filterValue}
-          onChange={this.changeFilterValue.bind(this)}
-        />
-        <br />
-        <br />
-        <input
-          type="input"
-          value={this.state.value}
-          onChange={this.changeInputVal.bind(this)}
-        />
-        <button onClick={this.addTodo.bind(this)}>Add todo</button>
-        <Todos todos={todos} deleteTodo={this.deleteTodo.bind(this)} />
+        <header className="header">
+          <input
+            className="new-todo"
+            placeholder="What task do you want to find?"
+            value={this.state.filterValue}
+            onChange={this.changeFilterValue.bind(this)}
+          />
+          <input
+            className="new-todo"
+            placeholder="What needs to be done?"
+            value={this.state.value}
+            onChange={this.changeInputVal.bind(this)}
+            onKeyPress={this._addTodo.bind(this)}
+          />
+        </header>
+        <section className="main">
+          <ul className="todo-list">
+            <Todos todos={todos} deleteTodo={this.deleteTodo.bind(this)} />
+          </ul>
+        </section>
       </div>
     );
   }

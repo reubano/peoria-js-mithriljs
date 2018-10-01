@@ -7,8 +7,16 @@ exports.config =
     babel:
       presets: ['latest', 'react']
 
+  npm:
+    styles:
+      'todomvc-app-css': ['index.css']
+
   files:
     javascripts:
       joinTo:
         'javascripts/app.js': /^app/
         'javascripts/vendor.js': /^(?!app)/
+
+    stylesheets:
+      joinTo:
+        'stylesheets/vendor.css': /^(?!app)/
