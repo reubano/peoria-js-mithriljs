@@ -1,18 +1,9 @@
 {
   "parserOptions": {
     "ecmaVersion": 6,
-    "ecmaFeatures": {
-      "jsx": true
-    },
     "sourceType": "module"
   },
   "extends": [
-    "plugin:prettier/recommended",
-    "plugin:react/recommended"
-  ],
-  "settings": {
-    "react": {
-      "version": "15.4"
-    }
-  }
+    "plugin:prettier/recommended"
+  ]
 }

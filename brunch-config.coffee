@@ -5,7 +5,7 @@ exports.config =
       pattern: /^app\/.*\.js$/
 
     babel:
-      presets: ['latest', 'react']
+      presets: ['latest']
 
   npm:
     styles:
