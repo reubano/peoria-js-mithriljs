@@ -1,7 +1,6 @@
-import ReactDOM from "react-dom";
-import React from "react";
-import App from "todo";
+var m = require("mithril");
+var App = require("todo");
 
 document.addEventListener("DOMContentLoaded", () => {
-  ReactDOM.render(<App />, document.getElementById("app"));
+  m.mount(document.getElementById("app"), App);
 });
