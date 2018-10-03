@@ -16,10 +16,9 @@
   },
   "scripts": {
     "prettify": "prettier --write 'app/**/*.js'",
-    "watch:prettify": "onchange 'app/**/*.js' -- prettier --write {{changed}}",
-    "watch": "npm run watch:prettify",
     "lint": "eslint app/**/*.js",
     "start": "brunch watch --server",
+    "watch": "brunch watch",
     "build": "brunch build || echo 'error building project'",
     "postinstall": "brunch build"
   },
